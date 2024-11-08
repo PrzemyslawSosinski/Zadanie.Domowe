@@ -6,7 +6,81 @@
         <title> Formularz </title>
       </head>
     <body>
-<br> Tutaj będzie formularz </br>
 <A HREF="index.html"> wróc </A>
+<body bgcolor="gray">
+    <left><h1>Ankieta w sprawie wyjazdu na wycieczkę</h1></center>
+    <form enctype="text/plain" action="mailto:example@example.com" subject="ankieta_wycieczka" method="POST">
+        <table border="3" cellpadding="10">
+            <tr height="100">
+                <td width="500">
+                    <b>1. Podaj swoje imię i nazwisko:</b><br>
+                    <input name="imie_nazwisko" size="22"><br><br>
+
+                    <b>2. Podaj swój adres e-mail:</b><br>
+                    <input name="email" size="22"><br><br>
+
+                    <b>3. Czy chcesz wziąć udział w wycieczce?</b><br>
+                    <input type="radio" name="udzial" value="tak"> Tak<br>
+                    <input type="radio" name="udzial" value="nie"> Nie<br><br>
+              </td>
+                <td width="500">
+
+                    <b>4. Jaki typ wycieczki preferujesz?</b><br>
+                    <select name="typ_wycieczki">
+<option value="gory">Wybierz</option>
+                        <option value="gory">Góry</option>
+                        <option value="morze">Morze</option>
+                        <option value="miasto">Zwiedzanie miast</option>
+                        <option value="zagraniczna">Wycieczka zagraniczna</option>
+                    </select><br><br>
+
+                    <b>5. Czy wolisz wycieczki zorganizowane czy indywidualne?</b><br>
+                    <select name="organizacja">
+<option value="gory">Wybierz</option>
+                        <option value="zorganizowana">Zorganizowana</option>
+                        <option value="indywidualna">Indywidualna</option>
+                    </select><br><br>
+                </td>
+            </tr>
+            <tr height="200">
+                <td>
+                    <b>6. Ile dni powinna trwać wycieczka?</b><br>
+                    <select name="czas_trwania">
+<option value="gory">Wybierz</option>
+                        <option value="1_2">1-2 dni</option>
+                        <option value="3_5">3-5 dni</option>
+                        <option value="tydzien">Około tygodnia</option>
+                        <option value="dluzsza">Dłuższa (ponad tydzień)</option>
+                    </select><br><br>
+                </td>
+                <td>
+                    <b>7. Jakie atrakcje najbardziej Cię interesują?</b><br>
+                    <select name="atrakcje">
+<option value="gory">Wybierz</option>
+                        <option value="muzea">Muzea</option>
+                        <option value="zabytki">Zabytki</option>
+                        <option value="sport">Aktywności sportowe</option>
+                        <option value="rekreacja">Rekreacja na świeżym powietrzu</option>
+                        <option value="gastronomia">Gastronomia (restauracje, kuchnia lokalna)</option>
+                    </select><br><br>
+                </td>
+            </tr>
+            <tr height="200">
+                <td colspan="2">
+                    <b>8. Dlaczego chcesz wziąć udział w wycieczce?</b><br>
+                    <textarea name="powod" cols="100" rows="5"></textarea><br><br>
+                </td>
+            </tr>
+            <tr height="100">
+                <td>
+                    <button onclick="alert('Dziękujemy za zgłoszenie!')" style="height:80px;width:300px">Zatwierdź</button>
+                </td>
+                <td>
+                    <input type="reset" value="Reset" style="height:80px; width:150px">
+                    <input type="submit" value="Wyślij ankietę" style="height:80px; width:150px">
+                </td>
+            </tr>
+        </table>
+    </form>
     </body>
    </html>
