@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sposoby definiowania kolorów w CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f4f4f4;
+        }
+        tr:hover {
+            background-color: #e0f7fa;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #555;
+        }
+</style>
+</head>
+<body>
+    <h1>Sposoby definiowania kolorów w CSS</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Sposób</th>
+                <th>Przykład</th>
+                <th>Opis</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nazwa koloru</td>
+                <td>red, blue, green</td>
+                <td>Kolor definiowany za pomocą predefiniowanych nazw, takich jak red, blue czy green.</td>
+            </tr>
+            <tr>
+                <td>RGB</td>
+                <td>rgb(255, 0, 0)</td>
+                <td>Kolor określany przez wartości czerwonego, zielonego i niebieskiego (zakres: 0–255).</td>
+            </tr>
+            <tr>
+                <td>RGBA</td>
+                <td>rgba(255, 0, 0, 0.5)</td>
+                <td>Rozszerzenie RGB o kanał przezroczystości (alpha), z zakresem od 0 (przezroczysty) do 1 (nieprzezroczysty).</td>
+            </tr>
+            <tr>
+                <td>HEX</td>
+                <td>#FF0000</td>
+                <td>Kolor zapisany w formacie szesnastkowym, np. #FF0000 dla koloru czerwonego.</td>
+            </tr>
+            <tr>
+                <td>HSL</td>
+                <td>hsl(0, 100%, 50%)</td>
+                <td>Kolor określany przez odcień (Hue), nasycenie (Saturation) i jasność (Lightness).</td>
+            </tr>
+            <tr>
+                <td>HSLA</td>
+                <td>hsla(0, 100%, 50%, 0.5)</td>
+                <td>Rozszerzenie HSL o kanał przezroczystości (alpha).</td>
+            </tr>
+            <tr>
+                <td>CMYK</td>
+                <td>cmyk(0%, 100%, 100%, 0%)</td>
+                <td>Model używany w druku, bazujący na kolorach Cyan, Magenta, Yellow i Black.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
