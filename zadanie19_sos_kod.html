@@ -1,0 +1,43 @@
+<html> 
+   <body>
+     <textarea cols="90" rows="24">
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 19</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+<script type="text/javascript">
+    // Funkcja obliczająca pole kwadratu
+    function pole_sosinski() {
+        var a_sosinski = parseFloat(document.getElementById('dlugosc').value);
+        var b_sosinski = a_sosinski * a_sosinski;
+        document.getElementById("nazwa").innerHTML = "Pole kwadratu = " + b_sosinski.toFixed(2) + " cm²";
+    }
+
+    // Funkcja obliczająca obwód kwadratu
+    function obwod_sosinski() {
+        var a_sosinski = parseFloat(document.getElementById('dlugosc').value);
+        var b_sosinski = 4 * a_sosinski;
+        document.getElementById("nazwa").innerHTML = "Obwód kwadratu = " + b_sosinski.toFixed(2) + " cm";
+    }
+</script>
+
+<h1>Wszystko o KWADRACIE</h1><br><br>
+Podaj długość boku: 
+<input type="text" id="dlugosc" value="podaj długość"> cm<br><br><br>
+
+<input type="button" name="pole" value="Oblicz pole" onclick="pole_sosinski()"><br><br>
+<input type="button" name="obwod" value="Oblicz obwód" onclick="obwod_sosinski()"><br><br>
+
+<div style="color:red; font-size:50px;" id="nazwa"></div>
+
+</body>
+</html>
+      
+               </textarea> 
+    </body> 
+</html>

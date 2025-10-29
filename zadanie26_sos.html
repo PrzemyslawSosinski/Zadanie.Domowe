@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 26</title>
+</head>
+<body style="font-family: Arial; background-color: #f8f8f8; color: #002b5c;">
+
+<h1 style="text-align:center;">Zadanie 26</h1>
+<h3 style="text-align:center;">Pole i obwód trapezu równoramiennego</h3>
+
+<script type="text/javascript">
+/* Autor: Sosiński
+   Temat: Obliczenie pola oraz obwodu trapezu równoramiennego
+   Funkcje: Pow_sosinski(a, b, h), Obw_sosinski(a, b, h)
+*/
+
+// Funkcja obliczająca pole trapezu
+function Pow_sosinski(a, b, h) {
+    return ((a + b) / 2) * h;
+}
+
+// Funkcja obliczająca obwód trapezu równoramiennego
+function Obw_sosinski(a, b, h) {
+    var ramie = Math.sqrt(Math.pow(Math.abs(a - b) / 2, 2) + Math.pow(h, 2));
+    return a + b + 2 * ramie;
+}
+
+// Funkcja pobierająca dane z formularza i wyświetlająca wyniki
+function oblicz_sosinski() {
+    var a = parseFloat(document.getElementById("a_sos").value);
+    var b = parseFloat(document.getElementById("b_sos").value);
+    var h = parseFloat(document.getElementById("h_sos").value);
+
+    if (isNaN(a) || isNaN(b) || isNaN(h) || a <= 0 || b <= 0 || h <= 0) {
+        alert("Podaj poprawne dodatnie wartości a, b i h!");
+        return;
+    }
+
+    var pole = Pow_sosinski(a, b, h);
+    var obw = Obw_sosinski(a, b, h);
+
+    // Wyświetlenie wyników w formularzu
+    document.getElementById("pole_wynik_sos").value = pole.toFixed(2);
+    document.getElementById("obw_wynik_sos").value = obw.toFixed(2);
+
+    // Wyświetlenie wyników przez document.write
+    document.write("<div style='font-size:22px; color:#cc0000;'>");
+    document.write("<b>Pole trapezu:</b> " + pole.toFixed(2) + " [jedn.]<br>");
+    document.write("<b>Obwód trapezu:</b> " + obw.toFixed(2) + " [jedn.]<br>");
+    document.write("</div>");
+}
+</script>
+
+<!-- Formularz -->
+<table border="1" cellpadding="10" style="font-size:18px; margin:auto;">
+    <tr>
+        <td>Podaj górną podstawę a:</td>
+        <td><input type="text" id="a_sos" placeholder="np. 5"></td>
+    </tr>
+    <tr>
+        <td>Podaj dolną podstawę b:</td>
+        <td><input type="text" id="b_sos" placeholder="np. 8"></td>
+    </tr>
+    <tr>
+        <td>Podaj wysokość h:</td>
+        <td><input type="text" id="h_sos" placeholder="np. 4"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" value="Oblicz" onclick="oblicz_sosinski()">
+        </td>
+    </tr>
+    <tr>
+        <td>Pole trapezu:</td>
+        <td><input type="text" id="pole_wynik_sos" readonly></td>
+    </tr>
+    <tr>
+        <td>Obwód trapezu:</td>
+        <td><input type="text" id="obw_wynik_sos" readonly></td>
+    </tr>
+</table>
+
+</body>
+</html>

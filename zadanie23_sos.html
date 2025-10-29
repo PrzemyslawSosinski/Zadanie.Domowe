@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 23</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<script type="text/javascript">
+
+// Funkcja obliczająca długość drabiny z twierdzenia Pitagorasa
+function dlugosc_sosinski(D_sos, X_sos) {
+    return Math.sqrt(Math.pow(D_sos, 2) + Math.pow(X_sos, 2));
+}
+
+// Funkcja obliczająca kąt nachylenia drabiny (w stopniach)
+function kat_sosinski(D_sos, X_sos) {
+    var kat_radiany = Math.atan(D_sos / X_sos);  // arcustangens
+    var kat_stopnie = kat_radiany * (180 / Math.PI); // zamiana radianów na stopnie
+    return kat_stopnie;
+}
+
+function oblicz_sosinski() {
+    var D_sos = parseFloat(document.getElementById("D_dana_sos").value);
+    var X_sos = parseFloat(document.getElementById("X_dana_sos").value);
+
+    if (isNaN(D_sos) || isNaN(X_sos) || D_sos <= 0 || X_sos <= 0) {
+        alert("Podaj poprawne dodatnie wartości D i X!");
+        return;
+    }
+
+    var dlugosc = dlugosc_sosinski(D_sos, X_sos);
+    var kat = kat_sosinski(D_sos, X_sos);
+
+    document.getElementById("dlugosc_wynik_sos").value = dlugosc.toFixed(2) + " m";
+    document.getElementById("kat_wynik_sos").value = kat.toFixed(2) + " °";
+}
+
+</script>
+
+<h1>Drabina oparta o mur</h1>
+<h3>Oblicz długość drabiny i kąt jej nachylenia</h3>
+
+<table border="1" cellpadding="10" style="font-size:18px;">
+    <tr>
+        <td>Podaj wysokość oparcia drabiny (D):</td>
+        <td><input type="text" id="D_dana_sos" placeholder="np. 4.5"></td>
+    </tr>
+    <tr>
+        <td>Podaj odległość podstawy drabiny od muru (X):</td>
+        <td><input type="text" id="X_dana_sos" placeholder="np. 2.0"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" value="Oblicz" onclick="oblicz_sosinski()">
+        </td>
+    </tr>
+    <tr>
+        <td>Długość drabiny:</td>
+        <td><input type="text" id="dlugosc_wynik_sos" readonly></td>
+    </tr>
+    <tr>
+        <td>Kąt nachylenia drabiny:</td>
+        <td><input type="text" id="kat_wynik_sos" readonly></td>
+    </tr>
+</table>
+
+</body>
+</html>

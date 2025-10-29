@@ -1,0 +1,78 @@
+<html> 
+   <body>
+     <textarea cols="90" rows="24">
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 20</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<script type="text/javascript">
+
+// Funkcja obliczająca długość boku AB
+function AB_sosinski() {
+    var xa_sos = parseFloat(document.getElementById('xa').value);
+    var ya_sos = parseFloat(document.getElementById('ya').value);
+    var xb_sos = parseFloat(document.getElementById('xb').value);
+    var yb_sos = parseFloat(document.getElementById('yb').value);
+
+    var ab = Math.sqrt(Math.pow(xb_sos - xa_sos, 2) + Math.pow(yb_sos - ya_sos, 2));
+    document.getElementById("wynik").innerHTML = "Długość boku AB = " + ab.toFixed(2);
+}
+
+// Funkcja obliczająca długość boku BC
+function BC_sosinski() {
+    var xb_sos = parseFloat(document.getElementById('xb').value);
+    var yb_sos = parseFloat(document.getElementById('yb').value);
+    var xc_sos = parseFloat(document.getElementById('xc').value);
+    var yc_sos = parseFloat(document.getElementById('yc').value);
+
+    var bc = Math.sqrt(Math.pow(xc_sos - xb_sos, 2) + Math.pow(yc_sos - yb_sos, 2));
+    document.getElementById("wynik").innerHTML = "Długość boku BC = " + bc.toFixed(2);
+}
+
+// Funkcja obliczająca długość boku AC
+function AC_sosinski() {
+    var xa_sos = parseFloat(document.getElementById('xa').value);
+    var ya_sos = parseFloat(document.getElementById('ya').value);
+    var xc_sos = parseFloat(document.getElementById('xc').value);
+    var yc_sos = parseFloat(document.getElementById('yc').value);
+
+    var ac = Math.sqrt(Math.pow(xc_sos - xa_sos, 2) + Math.pow(yc_sos - ya_sos, 2));
+    document.getElementById("wynik").innerHTML = "Długość boku AC = " + ac.toFixed(2);
+}
+
+</script>
+
+<h1>Trójkąt — obliczanie długości boków</h1>
+
+<h3>Podaj współrzędne punktów A, B i C:</h3>
+
+A(xa, ya): 
+<input type="text" id="xa" placeholder="xa"> 
+<input type="text" id="ya" placeholder="ya"><br><br>
+
+B(xb, yb): 
+<input type="text" id="xb" placeholder="xb"> 
+<input type="text" id="yb" placeholder="yb"><br><br>
+
+C(xc, yc): 
+<input type="text" id="xc" placeholder="xc"> 
+<input type="text" id="yc" placeholder="yc"><br><br>
+
+<input type="button" value="Oblicz AB" onclick="AB_sosinski()"><br><br>
+<input type="button" value="Oblicz BC" onclick="BC_sosinski()"><br><br>
+<input type="button" value="Oblicz AC" onclick="AC_sosinski()"><br><br>
+
+<div id="wynik" style="color:blue; font-size:30px;"></div>
+
+</body>
+</html>
+      
+               </textarea> 
+    </body> 
+</html>

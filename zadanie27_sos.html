@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 27</title>
+</head>
+<body style="font-family: Arial; background-color: #f0f8ff; color: #003366;">
+
+<h1 style="text-align:center;">Zadanie 27</h1>
+<h3 style="text-align:center;">Obliczenie wysokości samolotu i kąta startu</h3>
+
+<script type="text/javascript">
+/* Autor: Sosiński
+   Temat: Artur i Dawid – samolot nad Dawidem
+   Funkcje dwuparametrowe: wysokosc_sos(odl, kat), kat_startu_sos(s, odl)
+*/
+
+// Funkcja obliczająca wysokość samolotu
+function wysokosc_sos(odl, kat) {
+    return odl * Math.tan(kat * Math.PI / 180); // kat w stopniach zamieniany na radiany
+}
+
+// Funkcja obliczająca kąt startu samolotu
+function kat_startu_sos(s, odl) {
+    return Math.asin(odl / s) * 180 / Math.PI; // wynik w stopniach
+}
+
+// Funkcja pobierająca dane z formularza i wyświetlająca wyniki
+function oblicz_sos() {
+    var odl = parseFloat(document.getElementById("odl_sos").value);
+    var s = parseFloat(document.getElementById("s_sos").value);
+    var kat = parseFloat(document.getElementById("kat_sos").value);
+
+    if (isNaN(odl) || isNaN(s) || isNaN(kat) || odl <= 0 || s <= 0) {
+        alert("Podaj poprawne dodatnie wartości dla odległości, drogi i kąta!");
+        return;
+    }
+
+    var h = wysokosc_sos(odl, kat);
+    var kat_start = kat_startu_sos(s, odl);
+
+    // Wyświetlenie wyników w formularzu
+    document.getElementById("wysokosc_wynik_sos").value = h.toFixed(2);
+    document.getElementById("kat_wynik_sos").value = kat_start.toFixed(2);
+
+    // Wyświetlenie wyników przez document.write
+    document.write("<div style='font-size:22px; color:#cc0000;'>");
+    document.write("<b>Wysokość samolotu:</b> " + h.toFixed(2) + " [jedn.]<br>");
+    document.write("<b>Kąt startu samolotu:</b> " + kat_start.toFixed(2) + " [°]<br>");
+    document.write("</div>");
+}
+</script>
+
+<!-- Formularz -->
+<table border="1" cellpadding="10" style="font-size:18px; margin:auto;">
+    <tr>
+        <td>Odległość Artur-Dawid (odl):</td>
+        <td><input type="text" id="odl_sos" placeholder="np. 1000"></td>
+    </tr>
+    <tr>
+        <td>Długość drogi samolotu (s):</td>
+        <td><input type="text" id="s_sos" placeholder="np. 1200"></td>
+    </tr>
+    <tr>
+        <td>Kąt startu (kat) [°]:</td>
+        <td><input type="text" id="kat_sos" placeholder="np. 30"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" value="Oblicz" onclick="oblicz_sos()">
+        </td>
+    </tr>
+    <tr>
+        <td>Wysokość samolotu:</td>
+        <td><input type="text" id="wysokosc_wynik_sos" readonly></td>
+    </tr>
+    <tr>
+        <td>Kąt startu samolotu:</td>
+        <td><input type="text" id="kat_wynik_sos" readonly></td>
+    </tr>
+</table>
+
+</body>
+</html>

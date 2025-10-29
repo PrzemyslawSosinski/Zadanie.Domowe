@@ -1,0 +1,59 @@
+<html> 
+   <body>
+     <textarea cols="90" rows="24">
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 24</title>
+</head>
+<body>
+
+<h1>Zadanie 24</h1>
+<h3>Obliczenia z użyciem Math</h3>
+
+<script type="text/javascript">
+
+// Wczytanie dwóch liczb z prompt
+var x1_sos = parseFloat(prompt("Podaj pierwszą liczbę (x1) w stopniach:"));
+var x2_sos = parseFloat(prompt("Podaj drugą liczbę (x2):"));
+
+document.write("<b>Wczytane liczby:</b><br>");
+document.write("x1 = " + x1_sos + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x2 = " + x2_sos + "<br><br>");
+
+// 1. Obliczenia podstawowe
+var y1_sos = Math.pow(x1_sos, x2_sos);      // potęga
+var y2_sos = Math.sqrt(x1_sos);             // pierwiastek kwadratowy
+var y3_sos = Math.abs(x1_sos - x2_sos);     // wartość bezwzględna różnicy
+
+document.write("<b>Wyniki obliczeń:</b><br>");
+document.write("y1 = x1^x2 = " + y1_sos.toFixed(2) + "<br>");
+document.write("y2 = √x1 = " + y2_sos.toFixed(2) + "<br>");
+document.write("y3 = |x1 - x2| = " + y3_sos.toFixed(2) + "<br><br>");
+
+// 2. Konwersja stopni na radiany
+var x1_radiany_sos = (x1_sos * Math.PI) / 180;
+
+document.write("<b>Konwersja jednostek:</b><br>");
+document.write("w stopniach: x1 = " + x1_sos.toFixed(2) + " [stopnie]<br>");
+document.write("w radianach: x1 = " + x1_radiany_sos.toFixed(2) + " [radiany]<br><br>");
+
+// 3. Obliczenia trygonometryczne
+var sin_sos = Math.sin(x1_radiany_sos);
+var cos_sos = Math.cos(x1_radiany_sos);
+var tan_sos = Math.tan(x1_radiany_sos);
+
+document.write("<b>Funkcje trygonometryczne dla x1:</b><br>");
+document.write("sin(x1) = " + sin_sos.toFixed(2) + "<br>");
+document.write("cos(x1) = " + cos_sos.toFixed(2) + "<br>");
+document.write("tan(x1) = " + tan_sos.toFixed(2) + "<br>");
+
+</script>
+
+</body>
+</html>
+      
+               </textarea> 
+    </body> 
+</html>

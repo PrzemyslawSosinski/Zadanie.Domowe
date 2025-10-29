@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 18</title>
+</head>
+<body>
+    <div style="color:navy; font-size:28px; font-family:Arial;">
+
+    <script language="JavaScript">
+        // Pobieranie danych od użytkownika
+        var a = parseFloat(prompt("Podaj a:", ""));
+        var b = parseFloat(prompt("Podaj b:", ""));
+
+        // Funkcja sumy
+        function suma_sos(a, b) {
+            return a + b;
+        }
+
+        // Funkcja odejmowania
+        function odejmowanie_sos(a, b) {
+            return a - b;
+        }
+
+        // Funkcja mnożenia
+        function mnozenie_sos(a, b) {
+            return a * b;
+        }
+
+        // Funkcja licząca kwadraty
+        function od_kwadratu_sos(a, b) {
+            var a2 = a * a;
+            var b2 = b * b;
+            document.write("a² = " + a2 + "<br>");
+            document.write("b² = " + b2 + "<br>");
+        }
+
+        // Funkcja reszty z dzielenia
+        function reszta_z_dzielenia_a_przez_b_sos(a, b) {
+            return a % b;
+        }
+
+        // Testowanie funkcji
+        document.write("<b>Wyniki funkcji:</b><br><br>");
+        document.write("Suma: " + suma_sos(a, b) + "<br>");
+        document.write("Odejmowanie: " + odejmowanie_sos(a, b) + "<br>");
+        document.write("Mnożenie: " + mnozenie_sos(a, b) + "<br>");
+        document.write("<br>Kwadrowanie liczb:<br>");
+        od_kwadratu_sos(a, b);
+        document.write("<br>Reszta z dzielenia a przez b: " + reszta_z_dzielenia_a_przez_b_sos(a, b) + "<br>");
+    </script>
+
+    </div>
+</body>
+</html>

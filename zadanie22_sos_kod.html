@@ -1,0 +1,68 @@
+<html> 
+   <body>
+     <textarea cols="90" rows="24">
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 22</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+<script type="text/javascript">
+
+function Pole_sosinski(a_sos, b_sos) {
+    return a_sos * b_sos;
+}
+
+function Obwod_sosinski(a_sos, b_sos) {
+    return 2 * (a_sos + b_sos);
+}
+
+function oblicz_sosinski() {
+    var a_sos = parseFloat(document.getElementById("a_dana_sos").value);
+    var b_sos = parseFloat(document.getElementById("b_dana_sos").value);
+
+    var pole = Pole_sosinski(a_sos, b_sos);
+    var obw = Obwod_sosinski(a_sos, b_sos);
+
+    document.getElementById("wyprowadz_pole_sos").value = pole.toFixed(2);
+    document.getElementById("wyprowadz_obwod_sos").value = obw.toFixed(2);
+}
+
+</script>
+
+<h1>Obliczanie pola i obwodu prostokąta</h1>
+
+<table border="1" cellpadding="10" style="font-size:18px;">
+    <tr>
+        <td>Podaj bok a:</td>
+        <td><input type="text" id="a_dana_sos" placeholder="a"></td>
+    </tr>
+    <tr>
+        <td>Podaj bok b:</td>
+        <td><input type="text" id="b_dana_sos" placeholder="b"></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <input type="button" value="Oblicz" onclick="oblicz_sosinski()">
+        </td>
+    </tr>
+    <tr>
+        <td>Pole prostokąta:</td>
+        <td><input type="text" id="wyprowadz_pole_sos" name="pole" readonly></td>
+    </tr>
+    <tr>
+        <td>Obwód prostokąta:</td>
+        <td><input type="text" id="wyprowadz_obwod_sos" name="obw" readonly></td>
+    </tr>
+</table>
+
+</body>
+</html>
+      
+               </textarea> 
+    </body> 
+</html>
