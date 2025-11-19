@@ -1,0 +1,64 @@
+<html> 
+   <body>
+     <textarea cols="90" rows="24">
+
+      <!DOCTYPE html>
+<html>
+<head>
+    <title>Programowanie obiektowe - Router</title>
+    <script type="text/javascript">
+
+        function RouterConstructor(rodzaj, predkosc, ilosc_portow, producent) {
+            this.rodzaj = rodzaj;
+            this.predkosc = predkosc;
+            this.ilosc_portow = ilosc_portow;
+            this.producent = producent;
+        }
+
+
+        RouterConstructor.prototype.wyswietlDane = function() {
+            return 'Router: ' + this.rodzaj + ', Prędkość: ' + this.predkosc +
+                   ', Porty: ' + this.ilosc_portow + ', Producent: ' + this.producent;
+        };
+
+
+        var router1 = new RouterConstructor('WiFi 6', '1200Mbps', 4, 'TP-Link');
+        var router2 = new RouterConstructor('WiFi 5', '867Mbps', 3, 'Netgear');
+        var router3 = new RouterConstructor('WiFi 6E', '2400Mbps', 5, 'Asus');
+
+
+        router1.marka = 'SosinskiRouter';
+
+
+        router1.Router_pokaz_Sosinski = function() {
+            document.getElementById('wynik_pozacialem').innerHTML =
+                'Nowa właściwość poza obiektem:<br>' +
+                'Marka: ' + this.marka + '<br>' +
+                'Nowa metoda poza ciałem obiektu: Router_pokaz_Sosinski';
+        };
+
+
+        function wyswietlWszystkie() {
+            var wynik = '';
+            var obiekty = [router1, router2, router3];
+            for (var i = 0; i < obiekty.length; i++) {
+                wynik += obiekty[i].wyswietlDane() + '<br>';
+            }
+            document.getElementById('wynik').innerHTML = wynik;
+        }
+    </script>
+</head>
+<body>
+    <h1>Programowanie obiektowe - Router</h1>
+
+    <button onclick="wyswietlWszystkie()">Wyświetl dane wszystkich obiektów</button>
+    <div id="wynik" style="margin-top:20px; font-size:18px;"></div>
+
+    <button onclick="router1.Router_pokaz_Sosinski()" style="margin-top:20px;">Wyświetl nową właściwość i metodę poza obiektem</button>
+    <div id="wynik_pozacialem" style="margin-top:20px; font-size:18px;"></div>
+</body>
+</html>
+
+               </textarea> 
+    </body> 
+</html>

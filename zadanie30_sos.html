@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programowanie obiektowe - Router</title>
+    <script type="text/javascript">
+        var Router = {
+            rodzaj: 'WiFi 6',
+            predkosc: '1200Mbps',
+            ilosc_portow: 4,
+            Router_wyswietl_Sosinski: function() {
+                document.getElementById('wynik').innerHTML =
+                    'Obiekt: Router<br>' +
+                    'Pola:<br>' +
+                    'Rodzaj: ' + this.rodzaj + '<br>' +
+                    'Prędkość: ' + this.predkosc + '<br>' +
+                    'Ilość portów: ' + this.ilosc_portow + '<br>' +
+                    'Metoda: Router_wyswietl_Sosinski';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Programowanie obiektowe - Router</h1>
+    <button onclick="Router.Router_wyswietl_Sosinski()">Wyświetl dane obiektu</button>
+    <div id="wynik" style="margin-top:20px; font-size:18px;"></div>
+</body>
+</html>
